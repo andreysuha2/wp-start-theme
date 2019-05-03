@@ -1,5 +1,4 @@
-assets/dist/*.css
-assets/dist/*.css.map
+assets/dist/
 
 node_modules/
 bower_components/
@@ -7,3 +6,4 @@ _arc/
 .idea
 .DS_Store
 .Saved/
+package-lock.json
