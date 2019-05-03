@@ -1,13 +1,24 @@
 const config = require("./config");
+const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
+const TerserJSPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
     entry: "./src/main.js",
     output: {
         filename: './js/bundle.js'
     },
+    optimization: {
+        minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})]
+    },
     devtool: "source-map",
+    resolve: {
+        alias: {
+            "@": path.resolve(__dirname, './src')
+        }
+    },
     module: {
         rules: [
             {
@@ -16,7 +27,8 @@ module.exports = {
                 use: {
                     loader: "babel-loader"
                 }
-            },{
+            },
+            {
                 test: /\.scss$/,
                 use: [
                     MiniCssExtractPlugin.loader,
@@ -24,6 +36,31 @@ module.exports = {
                     "postcss-loader",
                     "sass-loader"
                 ]
+            },
+            {
+                test: /\.(png|jpe?g|ico|svg)/i,
+                use: [
+                    {
+                        loader: "url-loader",
+                        options: {
+                            name: "./images/[hash].[ext]",
+                            limit: 10000
+                        }
+                    },
+                    {
+                        loader: "img-loader"
+                    }
+                ]
+            },
+            {
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'fonts/'
+                    }
+                }]
             }
         ]
     },
