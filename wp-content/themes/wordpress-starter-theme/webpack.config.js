@@ -16,8 +16,15 @@ module.exports = {
     devtool: "source-map",
     resolve: {
         alias: {
-            "@": path.resolve(__dirname, './src')
-        }
+            "@": path.resolve(__dirname, './src'),
+            "@js": path.resolve(__dirname, './src/assets/js'),
+            "@scss": path.resolve(__dirname, './src/assets/sass'),
+            "@fonts": path.resolve(__dirname, './src/assets/fonts'),
+            "@icons": path.resolve(__dirname, './src/assets/icons'),
+            "@img": path.resolve(__dirname, './src/assets/images'),
+            "@public": path.resolve(__dirname, './src/assets')
+        },
+        extensions: [".scss", ".sass", ".js", ".css"]
     },
     module: {
         rules: [
@@ -58,7 +65,12 @@ module.exports = {
                     loader: 'file-loader',
                     options: {
                         name: '[name].[ext]',
-                        outputPath: 'fonts/'
+                        outputPath: './fonts/'
+                    }
+                }, {
+                    loader: 'url-loader',
+                    options: {
+                        name: './fonts/[name].[ext]'
                     }
                 }]
             }
@@ -70,10 +82,8 @@ module.exports = {
             chunkFilename: "[id].css"
         }),
         new BrowserSyncPlugin({
-            host: config.host,
-            port: config.port,
             proxy: config.localUrl,
-            files: ['{include,template-parts,woocommerce}/**/*.php', '*.php']
+            ...config.devServer
         })
     ]
 };

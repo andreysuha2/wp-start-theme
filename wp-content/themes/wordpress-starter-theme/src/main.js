@@ -1,2 +1,4 @@
 // import styles
-import '@/assets/sass/main.scss';
+import '@scss/main.scss';
+//require main js file
+require("@js/index");
