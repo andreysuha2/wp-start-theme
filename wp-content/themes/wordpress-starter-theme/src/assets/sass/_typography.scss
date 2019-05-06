@@ -4,11 +4,11 @@
     font-family: 'Roboto';
     font-weight: normal;
     src:  local('Roboto'), local('Roboto-Regular');
-    src:  url('../fonts/Roboto-Regular.eot');
-    src:  url('../fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/Roboto-Regular.woff') format('woff'),
-    url('../fonts/Roboto-Regular.ttf') format('truetype'),
-    url('../fonts/Roboto-Regular.svg#Roboto-Regular') format('svg');
+    src:  url('~@fonts/Roboto-Regular.eot');
+    src:  url('~@fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+    url('~@fonts/Roboto-Regular.woff') format('woff'),
+    url('~@fonts/Roboto-Regular.ttf') format('truetype'),
+    url('~@fonts/Roboto-Regular.svg#Roboto-Regular') format('svg');
 }
 
 // font-family: 'Roboto';
@@ -16,11 +16,11 @@
     font-family: 'Roboto';
     font-weight: normal;
     src:  local('Roboto'), local('Roboto-Regular');
-    src:  url('../fonts/Roboto-Regular.eot');
-    src:  url('../fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/Roboto-Regular.woff') format('woff'),
-    url('../fonts/Roboto-Regular.ttf') format('truetype'),
-    url('../fonts/Roboto-Regular.svg#Roboto-Regular') format('svg');
+    src:  url('~@fonts/Roboto-Regular.eot');
+    src:  url('~@fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+    url('~@fonts/Roboto-Regular.woff') format('woff'),
+    url('~@fonts/Roboto-Regular.ttf') format('truetype'),
+    url('~@fonts/Roboto-Regular.svg#Roboto-Regular') format('svg');
 }
 
 // font-family: 'Roboto';

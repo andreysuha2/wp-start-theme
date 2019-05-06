@@ -1,5 +1,4 @@
 const config = require("./config");
-const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const TerserJSPlugin = require('terser-webpack-plugin');
@@ -15,15 +14,7 @@ module.exports = {
     },
     devtool: "source-map",
     resolve: {
-        alias: {
-            "@": path.resolve(__dirname, './src'),
-            "@js": path.resolve(__dirname, './src/assets/js'),
-            "@scss": path.resolve(__dirname, './src/assets/sass'),
-            "@fonts": path.resolve(__dirname, './src/assets/fonts'),
-            "@icons": path.resolve(__dirname, './src/assets/icons'),
-            "@img": path.resolve(__dirname, './src/assets/images'),
-            "@public": path.resolve(__dirname, './src/assets')
-        },
+        alias: config.alias,
         extensions: [".scss", ".sass", ".js", ".css"]
     },
     module: {
@@ -45,13 +36,16 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(png|jpe?g|ico|svg)/i,
+                test: /\.(png|jpe?g|svg)/i,
+                exclude: [/fonts/],
                 use: [
                     {
                         loader: "url-loader",
                         options: {
-                            name: "./images/[hash].[ext]",
-                            limit: 10000
+                            name: "[hash].[ext]",
+                            limit: 10000,
+                            outputPath: './images/',
+                            publicPath: '../images/'
                         }
                     },
                     {
@@ -61,6 +55,7 @@ module.exports = {
             },
             {
                 test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                exclude: [/images/, /icons/],
                 use: [{
                     loader: 'file-loader',
                     options: {
