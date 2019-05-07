@@ -5,9 +5,10 @@ const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
-    entry: "./src/main.js",
+    entry: config.entry,
     output: {
-        filename: './js/bundle.js'
+        filename: './js/[name].js',
+        path: __dirname + '/dist'
     },
     optimization: {
         minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})]
