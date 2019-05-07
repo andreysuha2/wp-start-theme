@@ -55,7 +55,7 @@ module.exports = {
             },
             {
                 test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-                exclude: [/images/, /icons/],
+                include: [/fonts/],
                 use: [{
                     loader: 'file-loader',
                     options: {
