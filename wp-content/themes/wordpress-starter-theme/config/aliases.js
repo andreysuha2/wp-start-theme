@@ -8,5 +8,7 @@ module.exports = {
     "@fonts": path.resolve(__dirname, '../src/assets/fonts'),
     "@icons": path.resolve(__dirname, '../src/assets/icons'),
     "@img": path.resolve(__dirname, '../src/assets/images'),
-    "@public": path.resolve(__dirname, '../src/assets')
+    "@public": path.resolve(__dirname, '../src/assets'),
+    "@lib/js": path.resolve(__dirname, '../src/assets/lib/js'),
+    "@lib/scss": path.resolve(__dirname, '../src/assets/lib/scss')
 };
