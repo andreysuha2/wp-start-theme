@@ -11,7 +11,19 @@ module.exports = {
         path: __dirname + '/dist'
     },
     optimization: {
-        minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})]
+        minimizer: [
+            new TerserJSPlugin({
+                terserOptions: {
+                    output: { comments: false }
+                }
+            }),
+            new OptimizeCSSAssetsPlugin({
+                cssProcessor: require('cssnano'),
+                cssProcessorPluginOptions: {
+                    preset: ['default', { discardComments: { removeAll: true } }],
+                },
+            })
+        ]
     },
     devtool: "source-map",
     resolve: {
