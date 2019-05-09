@@ -4,6 +4,7 @@
   "description": "WP start theme",
   "main": "assets/main.js",
   "scripts": {
+    "start": "npm run serve",
     "build": "npm run clear && webpack --mode=production",
     "dev": "npm run clear && webpack --mode=development",
     "serve": "npm run clear && webpack --watch --mode=development",
