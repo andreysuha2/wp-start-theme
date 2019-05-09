@@ -5,5 +5,6 @@ module.exports = {
         bundle: path.resolve(__dirname, '../src/main.js'),
     },
     devServer: require('./devServer'),
-    alias: require('./aliases')
+    alias: require('./aliases'),
+    copy: require('./copy')
 };
