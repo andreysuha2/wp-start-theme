@@ -4,7 +4,7 @@
 
 В папку проекта ставим [Wordpress](https://wordpress.org/download/)  
 
-Далее читаем README.md темы  
+Далее читаем [README.md](https://github.com/andreysuha2/wp-start-theme/tree/master/wp-content/themes/wordpress-starter-theme) темы  
 
 ## Работа с гит
 
@@ -14,6 +14,6 @@
 
 ## Настройка проекта
 
-домен для разработки: `example.dev`  
+домен для разработки: `example.local`  
 
 префикс для таблиц: `wp_`  

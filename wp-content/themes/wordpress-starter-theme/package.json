@@ -4,6 +4,7 @@
   "description": "WP start theme",
   "main": "assets/main.js",
   "scripts": {
+    "start": "npm run serve",
     "build": "npm run clear && webpack --mode=production",
     "dev": "npm run clear && webpack --mode=development",
     "serve": "npm run clear && webpack --watch --mode=development",
@@ -26,6 +27,7 @@
     "babel-loader": "^8.0.5",
     "browser-sync": "^2.26.5",
     "browser-sync-webpack-plugin": "^2.2.2",
+    "copy-webpack-plugin": "^5.0.3",
     "css-loader": "^2.1.1",
     "del-cli": "^1.1.0",
     "img-loader": "^3.0.1",

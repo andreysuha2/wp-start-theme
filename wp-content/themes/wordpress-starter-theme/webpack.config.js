@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: config.entry,
@@ -55,7 +56,7 @@ module.exports = {
                     {
                         loader: "url-loader",
                         options: {
-                            name: "[hash].[ext]",
+                            name: "[name].[ext]",
                             limit: 10000,
                             outputPath: './images/',
                             publicPath: '../images/'
@@ -88,6 +89,7 @@ module.exports = {
         new BrowserSyncPlugin({
             proxy: config.localUrl,
             ...config.devServer
-        })
+        }),
+        new CopyWebpackPlugin(config.copy)
     ]
 };
