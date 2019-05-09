@@ -1,5 +1,4 @@
-assets/dist/
-
+dist
 node_modules/
 bower_components/
 _arc/

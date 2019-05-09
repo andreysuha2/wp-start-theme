@@ -1,11 +1,12 @@
 //  Импорт файлов
+@import 'normalize-scss';
+@include normalize();
 
 @import 'variables';
 @import 'functions';
 @import 'mixins';
 @import 'base';
 @import 'typography';
-@import 'sprite';
 
 @import 'wp-classes';
 
@@ -16,3 +17,9 @@
 @import 'block/footer';
 
 @import 'pages/home';
+
+main {
+    background-image: url("~@img/webpack.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
