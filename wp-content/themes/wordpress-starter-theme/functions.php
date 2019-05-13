@@ -95,6 +95,6 @@ require get_template_directory() . '/include/clear-wp-head.php';
 require get_template_directory() . '/include/customizer.php';
 
 /**
- * Create custom post types.
+ * Create custom post types and taxonomy.
  */
-require get_template_directory() . '/include/custom-post-type.php';
+require get_template_directory() . '/include/setup.php';

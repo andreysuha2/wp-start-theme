@@ -1,6 +1,6 @@
 const path = require('path');
 module.exports = {
-    localUrl: 'http://wp-start.local',
+    localUrl: 'http://test-a.test',
     entry: {
         bundle: path.resolve(__dirname, '../src/main.js'),
         customizer: path.resolve(__dirname, '../src/customizer.js')
