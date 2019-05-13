@@ -92,5 +92,7 @@ sass/
 ## Обратите внимание
 Рекомендуется отказаться от _jQuery_ в пользу нативного _js_.  
 В связи с этим на стороне frontend _jQuery_ отключен. Если вы все же решиете его использовать
-установит его через `npm/yarn` для включения в `bundle.js` или удалите строку `<?php wp_deregister_script('jquery')?>` 
+установите его через `npm/yarn` для включения в `bundle.js` или удалите строку `<?php wp_deregister_script('jquery')?>` 
 в `template-parts/head.php`, после чего _jQuery_ WP будет подключен как обычно в `head`.
+
+###`При некорректной работе сторонних плагинов - попробуйте удалить строку <?php wp_deregister_script('jquery')?> в template-parts/head.php` ###
