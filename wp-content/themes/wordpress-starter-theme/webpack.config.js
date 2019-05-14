@@ -44,9 +44,25 @@ module.exports = {
                 test: /\.scss$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    "css-loader",
-                    "postcss-loader",
-                    "sass-loader"
+                    {
+                        loader: "css-loader",
+                        options: {
+                            sourceMap: true
+                        }
+                    },
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            sourceMap: true
+                        }
+                    },
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            sourceMap: true
+                        }
+                    },
+
                 ]
             },
             {
@@ -84,7 +100,7 @@ module.exports = {
     plugins: [
         new MiniCssExtractPlugin({
             filename: "/css/[name].css",
-            chunkFilename: "[id].css"
+            chunkFilename: "[id].css",
         }),
         new BrowserSyncPlugin({
             proxy: config.localUrl,
