@@ -2,6 +2,7 @@ export function whoIsThis (param) {
     if(typeof param === 'string') return 'selector';
     else if(param instanceof HTMLElement) return 'element';
     else if(param instanceof Node) return 'node';
+    else if(param instanceof NodeList) return 'nodeList';
     else return null;
 }
 
@@ -10,4 +11,9 @@ export  function checkParam(param) {
         console.error('DomManipulate Error: this param is invalid use "string", "HTMLElement" or "Node"');
         return false
     } else return true;
+}
+
+export function getNode(param, type) {
+    if(type === 'node' || type === 'element') return param;
+    else return document.querySelectorAll(param);
 }

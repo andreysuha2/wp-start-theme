@@ -7,12 +7,25 @@ class DomManipulateLibrary {
         })
     }
 
+    events(eventsString, handler) {
+        let events = eventsString.split(' ');
+        events.forEach((event) => {
+            if(typeof this[event] === 'function') this[event](handler);
+        });
+    }
+
     ready(handler) {
         document.addEventListener("DOMContentLoaded", handler);
     }
 
     load(handler) {
         window.onload = function () { handler() }
+    }
+
+    resize(handler) {
+        window.addEventListener("resize", function () {
+            handler();
+        })
     }
 
     $(param) { return new DomObject(param) }
