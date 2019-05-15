@@ -17,3 +17,8 @@ export function getNode(param, type) {
     if(type === 'node' || type === 'element') return param;
     else return document.querySelectorAll(param);
 }
+
+export function handleMethod(nodes, type, handler) {
+    if(type === "element") return handler(nodes);
+    else if(type === "nodeList") nodes.forEach((node) => handler(node))
+}

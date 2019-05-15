@@ -6,6 +6,6 @@ dl.handler(() => {
     console.log('%cThis notifications show you who use DevLogger))', "font-size: 18px;font-weight: bold");
 });
 console.clear();
-dom.events("resize ready asd", function () {
-    console.log('great');
-})
+
+let footer = dom.$('footer');
+console.log(footer);
