@@ -20,6 +20,14 @@ class DomManipulateCore {
         return this._node_
     }
 
+    callHandler(handler) {
+        Helpers.handleMethod(this.node, this._paramType_, handler);
+        return this;
+    }
+
+    callCheckHandler(behavior, handler) {
+        return Helpers.handleCheckMethod(this.node, this._paramType_, behavior, handler);
+    }
 }
 
 export default DomManipulateCore;

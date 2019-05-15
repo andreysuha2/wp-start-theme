@@ -19,6 +19,15 @@ export function getNode(param, type) {
 }
 
 export function handleMethod(nodes, type, handler) {
-    if(type === "element") return handler(nodes);
+    if(type === "element") handler(nodes);
     else if(type === "nodeList") nodes.forEach((node) => handler(node))
+}
+
+export function handleCheckMethod(nodes, type, behavior, handler) {
+    if(type === "element") return handler(nodes);
+    else if(type === "nodeList") {
+        if(behavior === "some") return Object.keys(nodes).some(index => handler(nodes[index]));
+        if(behavior === "every") return Object.keys(nodes).every(index => handler(nodes[index]));
+    }
+    return null;
 }

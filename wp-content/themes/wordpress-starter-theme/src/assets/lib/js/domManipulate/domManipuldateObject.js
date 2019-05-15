@@ -16,25 +16,55 @@ class DomManipulateObject extends Core {
     }
 
     // class methods
-    addClass(classes) {
-        Helpers.handleMethod(this.node, this._paramType_, function(node) {
-            node.classList.add(classes);
+    addClass(list) {
+        return this.callHandler(function(node) {
+            node.classList.add(list);
         });
-        return this;
     }
 
-    removeClass(classes) {
-        Helpers.handleMethod(this.node, this._paramType_, function (node) {
-            node.classList.remove(classes);
+    removeClass(list) {
+        return this.callHandler(function (node) {
+            node.classList.remove(list);
         });
-        return this;
     }
 
-    toggleClass(classes, event) {
-        Helpers.handleMethod(this.node, this._paramType_, function (node) {
-            node.classList.toggle(classes, event);
+    toggleClass(list, event) {
+        return this.callHandler(function (node) {
+            node.classList.toggle(list, event);
+        });
+    }
+
+    hasClass(className, behavior = 'some') {
+        if(['every', 'some'].indexOf(behavior) === -1) behavior = 'some';
+        return this.callCheckHandler(behavior, function (node) {
+            return node.classList.contains(className);
+        });
+    }
+
+    //visibility
+    show(display = "block") {
+        return this.callHandler(function (node) {
+            node.style.display = display
+        });
+    }
+
+    hide() {
+        return this._callHandler_(function (node) {
+            node.style.display = 'none';
         })
     }
-}
 
+    toggleShow(display = 'block') {
+        return this.callHandler(function (node) {
+            node.style.display = (window.getComputedStyle(node).display === "none") ? display : "none";
+        })
+    }
+
+    //style
+    css(styles) {
+        this.callHandler(function (node) {
+           Object.keys(styles).forEach((name) => node.style[name] = styles[name]);
+        });
+    }
+}
 export default DomManipulateObject;
