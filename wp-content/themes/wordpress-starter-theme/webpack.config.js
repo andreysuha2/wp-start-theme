@@ -33,7 +33,7 @@ module.exports = {
     },
     devServer: {
         host: config.devServer.host,
-        port: '8000',
+        port: config.devServer.port === "8000" ? "5050" : "8000",
         overlay: {
             errors: true,
             warnings: false
