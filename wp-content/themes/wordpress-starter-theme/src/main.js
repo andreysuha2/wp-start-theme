@@ -11,3 +11,5 @@ window.http = http;
 window.dom = new domManipulate();
 //require main js file
 require("@js/index");
+console.log("test");
+
