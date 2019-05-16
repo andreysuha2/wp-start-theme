@@ -4,6 +4,7 @@ const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const SassLintPlugin = require('sass-lint-webpack');
 
 module.exports = {
     entry: config.entry,
@@ -106,6 +107,9 @@ module.exports = {
             proxy: config.localUrl,
             ...config.devServer
         }),
-        new CopyWebpackPlugin(config.copy)
+        new CopyWebpackPlugin(config.copy),
+        new SassLintPlugin({
+            failOnError: true
+        })
     ]
 };

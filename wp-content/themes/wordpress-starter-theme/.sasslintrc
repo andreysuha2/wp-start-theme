@@ -1,0 +1,18 @@
+{
+    "options": {
+        "merge-default-rules": false,
+        "formatter": "html",
+        "max-warnings": 2
+    },
+    "files": {
+        "include": "src/**/*.s+(a|c)ss"
+    },
+    "rules": {
+        "hex-notation": [
+            2,
+            {
+                "style": "uppercase"
+            }
+        ]
+    }
+}
