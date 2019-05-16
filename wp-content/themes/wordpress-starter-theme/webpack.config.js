@@ -4,8 +4,6 @@ const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const chokidar = require('chokidar');
-const path = require('path');
 
 module.exports = {
     entry: config.entry,
@@ -34,27 +32,17 @@ module.exports = {
         extensions: [".scss", ".sass", ".js", ".css"]
     },
     devServer: {
-        before(app, server) {
-          chokidar.watch(['./*.php', './**/*.php']).on('all', function () {
-              server.sockWrite(server.sockets, 'content-changed');
-          })
-        },
         host: config.devServer.host,
-        port: config.devServer.port,
+        port: '8000',
+        overlay: {
+            errors: true,
+            warnings: false
+        },
+        quiet: true,
+        noInfo: true,
+        clientLogLevel: 'none',
         hot: true,
-        open: true,
-        writeToDisk: true,
-        proxy: {
-            "/": {
-                target: config.localUrl,
-                changeOrigin: true,
-                autoRewrite: true,
-                secure: false,
-                headers: {
-                    'X-ProxiedBy-Webpack': true,
-                }
-            }
-        }
+        writeToDisk: true
     },
     module: {
         rules: [
@@ -127,24 +115,24 @@ module.exports = {
             filename: "css/[name].css",
             chunkFilename: "[id].css",
         }),
-        // new BrowserSyncPlugin({
-        //     proxy: config.localUrl,
-        //     host: 'http:localhost',
-        //     port: '5050',
-        //     files: [
-        //         {
-        //             match: ['{include,template-parts,woocommerce}/**/*.php', '*.php'],
-        //             fn: function (event, file) {
-        //                 if(event === "change") {
-        //                     const bs = require("browser-sync").get("bs-webpack-plugin");
-        //                     bs.reload();
-        //                 }
-        //             }
-        //         }
-        //     ]
-        // }, {
-        //     reload: false
-        // }),
+        new BrowserSyncPlugin({
+            proxy: config.localUrl,
+            host: config.devServer.host,
+            port: config.devServer.port,
+            files: [
+                {
+                    match: ['{include,template-parts,woocommerce}/**/*.php', '*.php'],
+                    fn: function (event) {
+                        if(event === "change") {
+                            const bs = require("browser-sync").get("bs-webpack-plugin");
+                            bs.reload();
+                        }
+                    }
+                }
+            ]
+        }, {
+            reload: false
+        }),
         new CopyWebpackPlugin(config.copy)
     ]
 };
