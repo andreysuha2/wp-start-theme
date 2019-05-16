@@ -32,6 +32,19 @@ module.exports = {
         alias: config.alias,
         extensions: [".scss", ".sass", ".js", ".css"]
     },
+    devServer: {
+        host: config.devServer.host,
+        port: config.devServer.port === "8000" ? "5050" : "8000",
+        overlay: {
+            errors: true,
+            warnings: false
+        },
+        quiet: true,
+        noInfo: true,
+        clientLogLevel: 'none',
+        hot: true,
+        writeToDisk: true
+    },
     module: {
         rules: [
             {
@@ -100,12 +113,26 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: "/css/[name].css",
+            filename: "css/[name].css",
             chunkFilename: "[id].css",
         }),
         new BrowserSyncPlugin({
             proxy: config.localUrl,
-            ...config.devServer
+            host: config.devServer.host,
+            port: config.devServer.port,
+            files: [
+                {
+                    match: ['{include,template-parts,woocommerce}/**/*.php', '*.php'],
+                    fn: function (event) {
+                        if(event === "change") {
+                            const bs = require("browser-sync").get("bs-webpack-plugin");
+                            bs.reload();
+                        }
+                    }
+                }
+            ]
+        }, {
+            reload: false
         }),
         new CopyWebpackPlugin(config.copy),
         new SassLintPlugin({
