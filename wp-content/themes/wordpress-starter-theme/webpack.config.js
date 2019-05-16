@@ -37,7 +37,7 @@ module.exports = {
         port: config.devServer.port === "8000" ? "5050" : "8000",
         overlay: {
             errors: true,
-            warnings: false
+            warnings: true
         },
         quiet: true,
         noInfo: true,
@@ -135,8 +135,6 @@ module.exports = {
             reload: false
         }),
         new CopyWebpackPlugin(config.copy),
-        new SassLintPlugin({
-            failOnError: true
-        })
+        new SassLintPlugin()
     ]
 };

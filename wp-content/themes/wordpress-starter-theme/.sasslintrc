@@ -1,18 +1,71 @@
 {
     "options": {
-        "merge-default-rules": false,
+        "merge-default-rules": true,
         "formatter": "html",
-        "max-warnings": 2
+        "max-warnings": 1
     },
     "files": {
-        "include": "src/**/*.s+(a|c)ss"
+        "include": "src/**/*.s+(a|c)ss",
     },
     "rules": {
+        "border-zero" : [
+          2,
+          {
+            "convention" : "none"
+          }
+        ],
+        "bem-depth" : [
+          2,
+          {
+            "max-depth" : 2
+          }
+        ],
+        "function-name-format" : 0,
+        "no-duplicate-properties" : [
+           2,
+           {
+             exclude : [src]
+           }
+         ],
+        "extends-before-mixins": 2,
+        "extends-before-declarations": 2,
+        "mixins-before-declarations": [
+          2,
+          {
+            "exclude": [
+              "breakpoint",
+              "mq"
+            ]
+          }
+        ],
+        "no-warn": 1,
+        "no-debug": 1,
+        "no-ids": 2,
+        "no-important": 2,
         "hex-notation": [
-            2,
-            {
-                "style": "uppercase"
-            }
-        ]
-    }
+          2,
+          {
+            "style": "lowercase"
+          }
+        ],
+        "indentation": [
+          2,
+          {
+            "size": 4
+          }
+        ],
+        "property-sort-order": 0,
+        "variable-name-format" : [
+           2,
+           {
+             "convention" : "camelcase"
+           }
+        ],
+        "no-color-literals" : 0,
+        "force-pseudo-nesting" : 0,
+        "force-attribute-nesting" : 0,
+        "no-qualifying-elements" : 0,
+        "empty-args" : 0,
+        "placeholder-in-extend": 0
+      }
 }
