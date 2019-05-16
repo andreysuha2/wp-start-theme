@@ -7,6 +7,6 @@ dl.handler(() => {
 });
 console.clear();
 
-let footer = dom.$('.page-footer');
-footer.css({"border-top": "1px solid #000", "background-color": "red"});
+let footer = dom.$('a');
+
 console.log(footer);

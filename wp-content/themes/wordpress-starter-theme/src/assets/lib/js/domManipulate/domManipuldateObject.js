@@ -2,8 +2,8 @@ import * as Helpers from './helpers';
 import Core from './core';
 
 class DomManipulateObject extends Core {
-    constructor(param, config = {}) {
-        super(param, config);
+    constructor(param) {
+        super(param);
     }
 
     /**
@@ -65,6 +65,44 @@ class DomManipulateObject extends Core {
         this.callHandler(function (node) {
            Object.keys(styles).forEach((name) => node.style[name] = styles[name]);
         });
+    }
+
+    // attributes
+    attrGet(name, fromNode = null) {
+        let attr = null;
+        if(this._paramType_ === "element") attr = this.node.getAttribute(name);
+        else if(!fromNode) attr = this.node[0].getAttribute(name);
+        else {
+            attr = [];
+            if(fromNode === 'all') this.node.forEach((node) => attr.push(node.getAttribute(name)));
+            else this.fromNode.forEach((index) => attr.push(this.node[index].getAttribute(name)));
+        }
+        return attr;
+    }
+
+    attrSet(name, value) {
+        return this.callHandler(function (node) {
+            node.setAttribute(name, value)
+        });
+    }
+
+    attrDel(name) {
+        return this.callHandler(function (node) {
+            node.removeAttribute(name);
+        })
+    }
+
+    //dataset
+    dataGet(name, fromNode = null) {
+        return this.attrGet(`data-${name}`, fromNode);
+    }
+
+    dateSet(name, value) {
+        return this.attrSet(`data-${name}`, value);
+    }
+
+    dataDel(name) {
+        return this.attrDel(`data-${name}`);
     }
 }
 export default DomManipulateObject;
