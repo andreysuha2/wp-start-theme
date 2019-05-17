@@ -8,8 +8,8 @@ export function whoIsThis (param) {
 
 export  function checkParam(param) {
     if(!whoIsThis(param)) {
-        console.error('DomManipulate Error: this param is invalid use "string", "HTMLElement" or "Node"');
-        return false
+        dl.error('DomManipulate Error: this param is invalid use "string", "HTMLElement" or "Node"');
+        return false;
     } else return true;
 }
 
@@ -20,7 +20,7 @@ export function getNode(param, type) {
 
 export function handleMethod(nodes, type, handler) {
     if(type === "element") handler(nodes);
-    else if(type === "nodeList") nodes.forEach((node) => handler(node))
+    else if(type === "nodeList") nodes.forEach((node) => handler(node));
 }
 
 export function handleCheckMethod(nodes, type, behavior, handler) {

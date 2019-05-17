@@ -36,7 +36,7 @@ module.exports = {
         port: config.devServer.port === "8000" ? "5050" : "8000",
         overlay: {
             errors: true,
-            warnings: false
+            warnings: true
         },
         quiet: true,
         noInfo: true,
@@ -47,16 +47,15 @@ module.exports = {
     module: {
         rules: [
             {
+                enforce: "pre",
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: [
-                    {
-                        loader: "eslint-loader"
-                    },
-                    {
-                        loader: "babel-loader"
-                    }
-                ]
+                loader: "eslint-loader"
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: ["babel-loader"]
             },
             {
                 test: /\.scss$/,

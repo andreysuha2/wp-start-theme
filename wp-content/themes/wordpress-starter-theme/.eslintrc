@@ -1,6 +1,37 @@
 {
     "parser": "babel-eslint",
+    "parserOptions": {
+        "sourceType": "module"
+    },
     "rules": {
-        "semi": ["error", "always"]
+        "semi": ["error", "always"], // не стоит точка с запятой в конце оператора
+        "semi-spacing": ["error", { "before": false, "after": true }], // нету пробела или перевода строки после точки с запятой или есть перед ней
+        "for-direction": "error", // создан бесконечный цикл for
+        "getter-return": "error", // тело геттера не включает в себя return
+        "no-async-promise-executor": "error", // исполнительная функция промиса является асинхронной
+        "no-await-in-loop": "error", // ожидание асинхронной функции используется в теле цикла
+        "no-compare-neg-zero": "error", // сравнение с -0
+        "no-cond-assign": "error", // в условном выражении используется присваивание
+        "no-console": "error", // используется console
+        "no-constant-condition": "error", // в условном операторе используется постоянное выражение
+        "no-dupe-args": "error", // дублируется название параметра функции
+        "no-dupe-keys": "error", // дублируется название свойста в объекте
+        "no-duplicate-case": "error", // дублируется значение case в операторе switch..case
+        "no-empty": "error", // используется пустой блок
+        "no-empty-character-class": "error", // используется пустой класс символов [] в регулярном выражении
+        "no-ex-assign": "error", // изменен параметр исключени в catch блоке
+        "no-extra-boolean-cast": "error", // логическое выражение может быть упрощено
+        "no-extra-parens": "error", // используются излишние круглые скобки
+        "no-extra-semi": "error", // используются излишние запятые
+        "no-func-assign": "error", // функция написаная объявленя в FunctionDeclation была переопределена
+        "no-inner-declarations": "error", // функция объявлена не в корне файла и не внутри другой функции
+        "no-invalid-regexp": "error", // в RegExp конструкторе используется не валидная строка
+        "no-regex-spaces": "error", // использование более одного пробела в регулярном выражении
+        "no-sparse-arrays": "error", // используется розреженый массив
+        "no-unreachable": "error", // используется недостежимый код
+        "no-unsafe-negation": "error", // используется отрицание левого операнда в операторах in, instanceof
+        "use-isnan": "error", // не используется функция isNaN для проверки на NaN
+        "array-callback-return": "error", // не используется return в методе массива который требует этого
+        "consistent-return": "error" // не используется return в else
     }
 }

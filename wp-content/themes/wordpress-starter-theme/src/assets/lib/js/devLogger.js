@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 export const isDev = process.env.NODE_ENV !== "production";
 
 class DevLogger {

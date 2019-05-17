@@ -11,7 +11,7 @@ class DomManipulateObject extends Core {
      * @returns {DomManipulateObject|null}
      */
     first() {
-        if(this._paramType_ === 'nodeList') return (this._node_[0]) ? new DomManipulateObject(this._node_[0]) : null;
+        if(this._paramType_ === 'nodeList') return this._node_[0] ? new DomManipulateObject(this._node_[0]) : null;
         else return this;
     }
 
@@ -44,20 +44,20 @@ class DomManipulateObject extends Core {
     //visibility
     show(display = "block") {
         return this.callHandler(function (node) {
-            node.style.display = display
+            node.style.display = display;
         });
     }
 
     hide() {
         return this._callHandler_(function (node) {
             node.style.display = 'none';
-        })
+        });
     }
 
     toggleShow(display = 'block') {
         return this.callHandler(function (node) {
-            node.style.display = (window.getComputedStyle(node).display === "none") ? display : "none";
-        })
+            node.style.display = window.getComputedStyle(node).display === "none" ? display : "none";
+        });
     }
 
     //style
@@ -82,14 +82,14 @@ class DomManipulateObject extends Core {
 
     attrSet(name, value) {
         return this.callHandler(function (node) {
-            node.setAttribute(name, value)
+            node.setAttribute(name, value);
         });
     }
 
     attrDel(name) {
         return this.callHandler(function (node) {
             node.removeAttribute(name);
-        })
+        });
     }
 
     //dataset
