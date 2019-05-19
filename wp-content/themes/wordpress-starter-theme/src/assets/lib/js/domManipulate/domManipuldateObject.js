@@ -1,4 +1,3 @@
-import * as Helpers from './helpers';
 import Core from './core';
 
 class DomManipulateObject extends Core {
@@ -12,7 +11,7 @@ class DomManipulateObject extends Core {
      */
     first() {
         if(this._paramType_ === 'nodeList') return this._node_[0] ? new DomManipulateObject(this._node_[0]) : null;
-        else return this;
+        return this;
     }
 
     // class methods
@@ -35,7 +34,7 @@ class DomManipulateObject extends Core {
     }
 
     hasClass(className, behavior = 'some') {
-        if(['every', 'some'].indexOf(behavior) === -1) behavior = 'some';
+        if([ 'every', 'some' ].indexOf(behavior) === -1) behavior = 'some';
         return this.callCheckHandler(behavior, function (node) {
             return node.classList.contains(className);
         });
@@ -63,7 +62,7 @@ class DomManipulateObject extends Core {
     //style
     css(styles) {
         this.callHandler(function (node) {
-           Object.keys(styles).forEach((name) => node.style[name] = styles[name]);
+           Object.keys(styles).forEach((name) => { node.style[name] = styles[name]; });
         });
     }
 

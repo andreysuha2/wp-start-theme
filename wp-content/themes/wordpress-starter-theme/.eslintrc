@@ -1,7 +1,23 @@
+/**
+  * Описание павил можно посмотреть здесь: https://eslint.org/docs/rules/
+  */
 {
     "parser": "babel-eslint",
     "parserOptions": {
-        "sourceType": "module"
+        "sourceType": "module",
+        "ecmaVersion": 9
+    },
+    "env": {
+        "es6": true,
+        "browser": true,
+        "node": true
+    },
+    "globals": {
+        "dl": "readonly",
+        "http": "readonly",
+        "dom": "readonly",
+        "wp": "readonly",
+        "jQuery": "readonly"
     },
     "rules": {
         "semi": ["error", "always"], // не стоит точка с запятой в конце оператора
@@ -32,6 +48,48 @@
         "no-unsafe-negation": "error", // используется отрицание левого операнда в операторах in, instanceof
         "use-isnan": "error", // не используется функция isNaN для проверки на NaN
         "array-callback-return": "error", // не используется return в методе массива который требует этого
-        "consistent-return": "error" // не используется return в else
+        "consistent-return": "error", // не используется return в else
+        "curly": ["error", "multi-line"], // см. https://eslint.org/docs/rules/curly c опцией multi-line
+        "dot-notation": "error", // для доступа к заренее известному свойтву объекта используются скобки вместо точки
+        "eqeqeq": "error", // используется не строгое сравнение (== вместо === или != вместо !==)
+        "max-classes-per-file": ["error", 1], // В файле описан более чем один класс (Обратите внимание речь идет именно о классе, а не его екземпляре)
+        "no-else-return": "error", // для return используется избыточный блок else
+        "no-empty-function": "error", // используется пустое тело функции
+        "no-eval": "error", // используется метод eval
+        "no-extend-native": "error", // разширяется нативный объект
+        "no-extra-bind": "error", // используется bind не имеющий ефекта
+        "no-fallthrough": "error", // Описание здесь https://eslint.org/docs/rules/no-fallthrough
+        "no-floating-decimal": "error", // некорректно описано число с плавающей точкой
+        "no-global-assign": "error", // переопределяется один из глобалных объектов
+        "no-implicit-coercion": "error", // не корректное приведение типов подробности здесь https://eslint.org/docs/rules/no-implicit-coercion
+        "no-implied-eval": "error", // используется аналог evel
+        "no-invalid-this": "error", // ключевое слово this используется в некорректном конексте см. https://eslint.org/docs/rules/no-invalid-this
+        "no-labels": "error", // используются метки
+        "no-lone-blocks": "error", // используются избыточные блоки
+        "no-multi-spaces": "error", // используются избыточные пробелы
+        "no-multi-str": "error", // см. https://eslint.org/docs/rules/no-multi-str
+        "no-new-func": "error", // используется Function конструтор
+        "no-new-wrappers": "error", // используется конструктор для примитива
+        "no-octal": "error", // Используется восмиричный литереал см. https://eslint.org/docs/rules/no-octal
+        "no-octal-escape": "error", // см. https://eslint.org/docs/rules/no-octal-escape
+        "no-proto": "error", // используется свойство __propto__
+        "no-return-assign": ["error", "always"], // используется присвоение в return см. https://eslint.org/docs/rules/no-return-assign
+        "no-self-assign": "error", // см. https://eslint.org/docs/rules/no-self-assign
+        "no-self-compare": "error", // используется сравнение переменной самой с собой
+        "no-throw-literal": "error", // используется throw без создания Error см. https://eslint.org/docs/rules/no-throw-literal
+        "no-unused-expressions": "error", // используется выражение не влияющее на состояние программы
+        "no-useless-call": "error", // используется не обязательный call или apply
+        "no-useless-return": "error", // используется избыточный return
+        "no-with": "error", // используется оператор with
+        "require-await": "error", // используется async без await
+        "no-shadow-restricted-names": "error", // см. https://eslint.org/docs/rules/no-shadow-restricted-names
+        "no-undef": "error", // используется глобальная переменная не определенная в globals этого файла
+        "no-unused-vars": "error", // объявлена не используемая переманная
+        "no-use-before-define": "error", // переменная используется до ее объявления
+        "callback-return": "error", // см. https://eslint.org/docs/rules/callback-return
+        "array-bracket-newline": ["error", "consistent"], // см. https://eslint.org/docs/rules/array-bracket-newline
+        "array-bracket-spacing": ["error", "always"], // см. https://eslint.org/docs/rules/array-bracket-spacing
+        "array-element-newline": ["error", "consistent"], // см. https://eslint.org/docs/rules/array-element-newline
+        "block-spacing": "error", // после открывающей или перед закрывающей скобкой блока не используется пробел
     }
 }
