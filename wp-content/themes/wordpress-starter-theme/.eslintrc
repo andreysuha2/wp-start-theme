@@ -145,6 +145,26 @@
         "semi-style": ["error", "last"], // см. https://eslint.org/docs/rules/semi-style
         "space-before-blocks": "error", // нету пробела перед блоком
         "space-before-function-paren": ["error", "never"], // см. https://eslint.org/docs/rules/space-before-function-paren
-        "space-in-parens": "error" // см. https://eslint.org/docs/rules/space-in-parens
+        "space-in-parens": "error", // см. https://eslint.org/docs/rules/space-in-parens
+        "wrap-regex": "error", // см. https://eslint.org/docs/rules/wrap-regex
+        "arrow-body-style": ["error", "as-needed"], // см. https://eslint.org/docs/rules/arrow-body-style
+        "arrow-spacing": ["error", { "before": true, "after": true }], // перед или после стрелки не используется пробел
+        "generator-star-spacing": ["error", {"before":  false, "after": true}], // см. https://eslint.org/docs/rules/generator-star-spacing
+        "no-class-assign": "error", // см. https://eslint.org/docs/rules/no-class-assign
+        "no-confusing-arrow": ["error", {"allowParens": true}], // см. https://eslint.org/docs/rules/no-confusing-arrow
+        "no-const-assign": "error", // перепресвоено значение константе
+        "no-dupe-class-members": "error", // используются одинаковые имена для медодов одного класа
+        "no-duplicate-imports": ["error", { "includeExports": true }], // см. https://eslint.org/docs/rules/no-duplicate-imports
+        "no-new-symbol": "error", // Symbol вызван с оператором new
+        "no-this-before-super": "error", // this используется до вызова super() в конструкторе класса
+        "no-useless-constructor": "error", // см. https://eslint.org/docs/rules/no-useless-constructor
+        "no-useless-rename": "error", // см. https://eslint.org/docs/rules/no-useless-rename
+        "no-var": "error", // используется var для объявления переменной
+        "object-shorthand": ["error", "always", { "avoidExplicitReturnArrows": true }], // см. https://eslint.org/docs/rules/object-shorthand
+        "prefer-spread": "error", // см. https://eslint.org/docs/rules/prefer-spread
+        "prefer-template": "error", // используется конкатенация вместо литерального шаблона
+        "require-yield": "error", // в функции генераторе отсутсвует yield
+        "template-curly-spacing": ["error", "never"], // см. https://eslint.org/docs/rules/template-curly-spacing
+        "yield-star-spacing": ["error", "after"] // cм. https://eslint.org/docs/rules/yield-star-spacing
     }
 }

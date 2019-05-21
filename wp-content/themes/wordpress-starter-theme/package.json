@@ -12,10 +12,8 @@
     "fix": "npm run js-fix",
     "js-fix": "./node_modules/.bin/eslint --fix src/**",
     "lint": "npm run lint-js",
-    "lint-js": "./node_modules/.bin/eslint src/**",
-    "precommit-msg": "echo 'Pre-commit checks...' && exit 0"
+    "lint-js": "./node_modules/.bin/eslint src/**"
   },
-  "pre-commit": [ "precommit-msg","lint" ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andreysuha2/wp-start-theme.git"
@@ -44,7 +42,6 @@
     "node-sass": "^4.12.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
-    "pre-commit": "^1.2.2",
     "sass-loader": "^7.1.0",
     "terser-webpack-plugin": "^1.2.3",
     "url-loader": "^1.1.2",

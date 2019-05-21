@@ -15,7 +15,7 @@ class Http {
     get(action, params = {}, options = {}) {
         params.action = action;
         return new Promise((resolve, reject) => {
-            this.http.get('/', { params: params }, options)
+            this.http.get('', { params }, options)
                 .then((response) => resolve(response))
                 .catch((err) => reject(err.response));
         });
@@ -24,7 +24,7 @@ class Http {
     post(action, data = {}, options = {}) {
         data.action = action;
         return new Promise((resolve, reject) => {
-            this.http.post('/', data, options)
+            this.http.post('', data, options)
                 .then((response) => resolve(response))
                 .catch((err) => reject(err.response));
         });

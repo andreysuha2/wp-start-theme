@@ -1,10 +1,6 @@
 import Core from './core';
 
 class DomManipulateObject extends Core {
-    constructor(param) {
-        super(param);
-    }
-
     /**
      * @desc get first element of selected NodeList or current selected element
      * @returns {DomManipulateObject|null}
