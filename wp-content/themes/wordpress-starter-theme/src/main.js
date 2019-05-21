@@ -11,3 +11,4 @@ window.http = http;
 window.dom = new DomManipulate();
 // require main js file
 require('@js/index');
+require('./vue-app');

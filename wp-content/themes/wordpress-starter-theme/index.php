@@ -2,7 +2,7 @@
 
 	<main id="main" class="page-main" role="main">
         <div class="page-container">
-
+            <hellow-vue></hellow-vue>
             <?php if ( have_posts() ) : ?>
 
                 <?php while ( have_posts() ) : the_post(); ?>
