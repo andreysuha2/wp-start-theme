@@ -2,9 +2,7 @@ import DomObject from './domManipuldateObject';
 
 class DomManipulateLibrary {
     constructor(config = {}) {
-        Object.defineProperties(this, {
-            _configs_: { value: config }
-        })
+        Object.defineProperties(this, { _configs_: { value: config } });
     }
 
     events(eventsString, handler) {
@@ -19,16 +17,16 @@ class DomManipulateLibrary {
     }
 
     load(handler) {
-        window.onload = function () { handler() }
+        window.onload = function() { handler(); };
     }
 
     resize(handler) {
-        window.addEventListener("resize", function () {
+        window.addEventListener("resize", function() {
             handler();
-        })
+        });
     }
 
-    $(param) { return new DomObject(param) }
+    $(param) { return new DomObject(param); }
 }
 
 export default DomManipulateLibrary;

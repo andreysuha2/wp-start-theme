@@ -7,7 +7,7 @@ class DomManipulateCore {
             _param_: { value: param },
             _paramType_: { get() { return Helpers.whoIsThis(this._node_); } },
             _node_: { value: Helpers.getNode(param, Helpers.whoIsThis(param)) }
-        })
+        });
     }
 
     // check is element exist
@@ -17,7 +17,7 @@ class DomManipulateCore {
 
     // return NodeList or HTMLElement Object
     get node() {
-        return this._node_
+        return this._node_;
     }
 
     callHandler(handler) {

@@ -8,7 +8,11 @@
     "build": "npm run clear && webpack --mode=production",
     "dev": "npm run clear && webpack --mode=development",
     "serve": "npm run clear && webpack-dev-server --mode=development",
-    "clear": "del-cli dist"
+    "clear": "del-cli dist",
+    "fix": "npm run js-fix",
+    "js-fix": "./node_modules/.bin/eslint --fix src/**",
+    "lint": "npm run lint-js",
+    "lint-js": "./node_modules/.bin/eslint src/**"
   },
   "repository": {
     "type": "git",
@@ -24,12 +28,15 @@
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "autoprefixer": "^9.5.1",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "browser-sync": "^2.26.5",
     "browser-sync-webpack-plugin": "^2.2.2",
     "copy-webpack-plugin": "^5.0.3",
     "css-loader": "^2.1.1",
     "del-cli": "^1.1.0",
+    "eslint": "^5.16.0",
+    "eslint-loader": "^2.1.2",
     "img-loader": "^3.0.1",
     "mini-css-extract-plugin": "^0.6.0",
     "node-sass": "^4.12.0",
@@ -46,5 +53,9 @@
     "axios": "^0.18.0",
     "file-loader": "^3.0.1",
     "normalize-scss": "^7.0.1"
-  }
+  },
+  "browserslist": [
+    "last 2 version",
+    "> 2%"
+  ]
 }

@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'axios';
 
 class Http {
     constructor() {
@@ -6,28 +6,28 @@ class Http {
     }
 
     get http() {
-        axios.create({
+        return axios.create({
             baseURL: this.baseUrl,
-            headers: { 'Content-Type':  'application/json'}
+            headers: { 'Content-Type': 'application/json' }
         });
     }
 
     get(action, params = {}, options = {}) {
         params.action = action;
         return new Promise((resolve, reject) => {
-           this.http.get('/', {params: params}, options)
-                    .then((response) => resolve(response))
-                    .catch((err) => reject(err.response));
+            this.http.get('', { params }, options)
+                .then((response) => resolve(response))
+                .catch((err) => reject(err.response));
         });
     }
 
     post(action, data = {}, options = {}) {
         data.action = action;
-        return new Promise(((resolve, reject) => {
-            this.http.post('/', data, options)
-                     .then((response) => resolve(response))
-                     .catch((err) => reject(err.response));
-        }));
+        return new Promise((resolve, reject) => {
+            this.http.post('', data, options)
+                .then((response) => resolve(response))
+                .catch((err) => reject(err.response));
+        });
     }
 }
 
