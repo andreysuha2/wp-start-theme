@@ -8,7 +8,8 @@
     "build": "npm run clear && webpack --mode=production",
     "dev": "npm run clear && webpack --mode=development",
     "serve": "npm run clear && webpack-dev-server --mode=development",
-    "clear": "del-cli dist"
+    "clear": "del-cli dist",
+    "scss-fix": "stylelint 'src/**/*.s?(c|a)ss' --fix"
   },
   "repository": {
     "type": "git",
@@ -36,9 +37,11 @@
     "node-sass": "^4.12.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
-    "sass-lint": "^1.13.1",
-    "sass-lint-webpack": "^1.0.1",
     "sass-loader": "^7.1.0",
+    "stylelint": "^10.0.1",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-selector-bem-pattern": "^2.1.0",
+    "stylelint-webpack-plugin": "^0.10.5",
     "terser-webpack-plugin": "^1.2.3",
     "url-loader": "^1.1.2",
     "webpack": "^4.30.0",

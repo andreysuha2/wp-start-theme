@@ -4,7 +4,7 @@ const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const SassLintPlugin = require('sass-lint-webpack');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
     entry: config.entry,
@@ -37,7 +37,7 @@ module.exports = {
         port: config.devServer.port === "8000" ? "5050" : "8000",
         overlay: {
             errors: true,
-            warnings: true
+            warnings: false
         },
         quiet: true,
         noInfo: true,
@@ -135,6 +135,9 @@ module.exports = {
             reload: false
         }),
         new CopyWebpackPlugin(config.copy),
-        new SassLintPlugin()
+        new StyleLintPlugin({
+            files: 'src/**/*.s?(c|a)ss',
+            syntax: 'scss'
+        })
     ]
 };
