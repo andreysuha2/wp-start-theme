@@ -5,9 +5,7 @@ class DomManipulateCore {
         if(!Helpers.checkParam(param)) return { message: 'DomManipulate called with Invalid param' };
         Object.defineProperties(this, {
             _param_: { value: param },
-            _paramType_: {
-                get() { return Helpers.whoIsThis(this._node_); }
-            },
+            _paramType_: { get() { return Helpers.whoIsThis(this._node_); } },
             _node_: { value: Helpers.getNode(param, Helpers.whoIsThis(param)) }
         });
     }

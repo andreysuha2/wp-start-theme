@@ -8,16 +8,16 @@ class Http {
     get http() {
         return axios.create({
             baseURL: this.baseUrl,
-            headers: { 'Content-Type':  'application/json'}
+            headers: { 'Content-Type': 'application/json' }
         });
     }
 
     get(action, params = {}, options = {}) {
         params.action = action;
         return new Promise((resolve, reject) => {
-           this.http.get('/', {params: params}, options)
-                    .then((response) => resolve(response))
-                    .catch((err) => reject(err.response));
+            this.http.get('/', { params: params }, options)
+                .then((response) => resolve(response))
+                .catch((err) => reject(err.response));
         });
     }
 
@@ -25,8 +25,8 @@ class Http {
         data.action = action;
         return new Promise((resolve, reject) => {
             this.http.post('/', data, options)
-                     .then((response) => resolve(response))
-                     .catch((err) => reject(err.response));
+                .then((response) => resolve(response))
+                .catch((err) => reject(err.response));
         });
     }
 }

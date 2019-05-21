@@ -1,4 +1,4 @@
-export function whoIsThis (param) {
+export function whoIsThis(param) {
     if(typeof param === 'string') return 'selector';
     else if(param instanceof HTMLElement) return 'element';
     else if(param instanceof Node) return 'node';

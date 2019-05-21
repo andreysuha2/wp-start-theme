@@ -3,7 +3,7 @@ export const isDev = process.env.NODE_ENV !== "production";
 
 class DevLogger {
     constructor() {
-        this.colors = {notify: '#006400', warning: '#808000', error: 'red'};
+        this.colors = { notify: '#006400', warning: '#808000', error: 'red' };
         this.style = `
             padding: 3px 15px;
             font-size: 14px;
@@ -18,7 +18,7 @@ class DevLogger {
     }
 
     notify() {
-        this.log("%cNotify", `${this.style}background: ${this.colors.notify};` , ...arguments);
+        this.log("%cNotify", `${this.style}background: ${this.colors.notify};`, ...arguments);
     }
 
     warning() {
@@ -30,11 +30,11 @@ class DevLogger {
     }
 
     handler(handler) {
-        if (isDev) handler();
+        if(isDev) handler();
     }
 
     log() {
-        if (isDev) console.log(...arguments);
+        if(isDev) console.log(...arguments);
     }
 }
 export default new DevLogger();

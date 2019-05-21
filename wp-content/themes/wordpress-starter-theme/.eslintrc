@@ -20,8 +20,6 @@
         "jQuery": "readonly"
     },
     "rules": {
-        "semi": ["error", "always"], // не стоит точка с запятой в конце оператора
-        "semi-spacing": ["error", { "before": false, "after": true }], // нету пробела или перевода строки после точки с запятой или есть перед ней
         "for-direction": "error", // создан бесконечный цикл for
         "getter-return": "error", // тело геттера не включает в себя return
         "no-async-promise-executor": "error", // исполнительная функция промиса является асинхронной
@@ -91,5 +89,62 @@
         "array-bracket-spacing": ["error", "always"], // см. https://eslint.org/docs/rules/array-bracket-spacing
         "array-element-newline": ["error", "consistent"], // см. https://eslint.org/docs/rules/array-element-newline
         "block-spacing": "error", // после открывающей или перед закрывающей скобкой блока не используется пробел
+        "brace-style": ["error", "1tbs", {"allowSingleLine":  true}], // см. https://eslint.org/docs/rules/brace-style
+        "camelcase": "error", // название переменной и свойства объекта объявлено не в camelcase
+        "comma-dangle": "error", // поставлена запятая после последнего свойтва в объектк и последнего елемента в массиве
+        "comma-spacing": "error", // не поставлен пробел после запятой или поставлен перед
+        "comma-style": "error", // см. https://eslint.org/docs/rules/comma-style
+        "computed-property-spacing": "error", // см. https://eslint.org/docs/rules/computed-property-spacing
+        "consistent-this": ["error", "__this"], // для записи this в переменную используется имя переменной отличное от __this
+        "func-call-spacing": "error", // см. https://eslint.org/docs/rules/func-call-spacing
+        "func-style": ["error", "declaration", {"allowArrowFunctions": true }], // для объявления функции используется function expression
+        "indent": ["error", 4], // вложеные инструкции должны иметь отступ в 4 пробела от родителя см. https://eslint.org/docs/rules/indent
+        "key-spacing": "error", // см. https://eslint.org/docs/rules/key-spacing
+        "keyword-spacing": ["error",
+            {
+                "overrides": {
+                    "if": { "after": false },
+                    "for": { "after": false },
+                    "while": { "after": false }
+                }
+            }
+        ], // см. https://eslint.org/docs/rules/keyword-spacing
+        "lines-between-class-members": "error", // неиспользуется пробел между методами класса
+        "max-depth": "error", // превышена максимальная вложеность (4) условий см. https://eslint.org/docs/rules/max-depth
+        "max-len": ["error", {
+            "code": 120,
+            "ignoreComments": true,
+            "ignoreUrls": true,
+            "ignoreStrings": true,
+            "ignoreTemplateLiterals": true,
+            "ignoreRegExpLiterals": true
+        }], // превышена максимальная длниа строки в 120 символов см. https://eslint.org/docs/rules/max-len
+        "max-lines": ["error", {"max":  300, "skipBlankLines": true, "skipComments": true}], // превышено максимальное количество строк в файле (300), без учета комментариев и строк состоящих из пробелов
+        "multiline-ternary": ["error", "never"], // тернарный оператор написан не в одну строку см. https://eslint.org/docs/rules/multiline-ternary
+        "new-cap": ["error", {
+                "newIsCap":  true, // оператор new запущен с функкцией именованой не в capitalize
+                "capIsNew": true, // функция именованая в capitalize запущена без оператора new
+                "newIsCapExceptions": [], // исключения для newIsCap использовать только для сторонних библиотек
+                "capIsNewExceptions": [] // исключения для capIsNew использовать только для сторонних библиотек
+            }
+        ], // см. https://eslint.org/docs/rules/new-cap
+        "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 3 }], // используется цепочка из более чем 3 методов в одной строке см. https://eslint.org/docs/rules/newline-per-chained-call
+        "no-lonely-if": "error", // см. https://eslint.org/docs/rules/no-lonely-if
+        "no-multiple-empty-lines": ["error", { "max": 2, "maxBOF": 0, "maxEOF": 1 }], // превышено максимальное число пустых строк (2)
+        "no-trailing-spaces": "error", // см. https://eslint.org/docs/rules/no-trailing-spaces
+        "no-unneeded-ternary": "error", // тернарный оператор можно упростить
+        "no-whitespace-before-property": "error", // см. https://eslint.org/docs/rules/no-whitespace-before-property
+        "nonblock-statement-body-position": "error", // см. https://eslint.org/docs/rules/nonblock-statement-body-position
+        "object-curly-newline": ["error", { "multiline": true }], // см. https://eslint.org/docs/rules/object-curly-newline
+        "object-curly-spacing": ["error", "always"], // отсутсвует пробел после открывающей или перед закрывающей фигурной скобкой объекта
+        "one-var": ["error", "consecutive"], // см. https://eslint.org/docs/rules/one-var
+        "padded-blocks": ["error", "never" ], // см. https://eslint.org/docs/rules/padded-blocks
+        "quote-props": ["error", "consistent"], // для названий свойств объекта используются не однродные скобки
+        "semi": ["error", "always"], // не стоит точка с запятой в конце оператора
+        "semi-spacing": ["error", { "before": false, "after": true }], // нету пробела или перевода строки после точки с запятой или есть перед ней
+        "semi-style": ["error", "last"], // см. https://eslint.org/docs/rules/semi-style
+        "space-before-blocks": "error", // нету пробела перед блоком
+        "space-before-function-paren": ["error", "never"], // см. https://eslint.org/docs/rules/space-before-function-paren
+        "space-in-parens": "error" // см. https://eslint.org/docs/rules/space-in-parens
     }
 }
