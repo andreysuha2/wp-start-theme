@@ -10,6 +10,7 @@
     "serve": "npm run clear && webpack-dev-server --mode=development",
     "clear": "del-cli dist",
     "fix": "npm run js-fix",
+    "scss-fix": "stylelint 'src/**/*.s?(c|a)ss' --fix"
     "js-fix": "./node_modules/.bin/eslint --fix src/**",
     "lint": "npm run lint-js",
     "lint-js": "./node_modules/.bin/eslint src/**"
@@ -32,6 +33,7 @@
     "babel-loader": "^8.0.5",
     "browser-sync": "^2.26.5",
     "browser-sync-webpack-plugin": "^2.2.2",
+    "bs-fullscreen-message": "^1.1.0",
     "copy-webpack-plugin": "^5.0.3",
     "css-loader": "^2.1.1",
     "del-cli": "^1.1.0",
@@ -43,6 +45,10 @@
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
+    "stylelint": "^10.0.1",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-selector-bem-pattern": "^2.1.0",
+    "stylelint-webpack-plugin": "^0.10.5",
     "terser-webpack-plugin": "^1.2.3",
     "url-loader": "^1.1.2",
     "vue-loader": "^15.7.0",

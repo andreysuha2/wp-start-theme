@@ -4,6 +4,7 @@ const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = (env, options) => {
@@ -157,6 +158,10 @@ module.exports = (env, options) => {
                 reload: false
             }),
             new CopyWebpackPlugin(config.copy),
+            new StyleLintPlugin({
+                files: 'src/**/*.s?(c|a)ss',
+                syntax: 'scss'
+            })
             new VueLoaderPlugin()
         ]
     }

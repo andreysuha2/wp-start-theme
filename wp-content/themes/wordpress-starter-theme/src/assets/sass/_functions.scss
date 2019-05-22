@@ -4,11 +4,11 @@
 // https://habrahabr.ru/post/310186/
 // helper function, that strips units (12px => 12)
 @function strip-unit($number) {
-  @if type-of($number) == 'number' and not unitless($number) {
-    @return $number / ($number * 0 + 1);
-  }
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
 
-  @return $number;
+    @return $number;
 }
 
 // helper function, that calculates fluid font size
@@ -17,16 +17,16 @@
 // $w-min - min window width
 // $w-max - max window width
 // $units - measure units (e.x. px, em, rem, vw)
-@function calcFluidFontSize($f-min, $f-max, $w-min, $w-max, $units: px) {
-  $f-min: strip-unit($f-min);
-  $f-max: strip-unit($f-max);
-  $w-min: strip-unit($w-min);
-  $w-max: strip-unit($w-max);
+@function calcFluidFontSize($fMin, $fMax, $wMin, $wMax, $units: px) {
+    $fMin: strip-unit($fMin);
+    $fMax: strip-unit($fMax);
+    $wMin: strip-unit($wMin);
+    $wMax: strip-unit($wMax);
 
-  $k: ($f-max - $f-min)/($w-max - $w-min);
-  $b: $f-min - $k * $w-min;
+    $k: ($fMax - $fMin) / ($wMax - $wMin);
+    $b: $fMin - $k * $wMin;
 
-  $b: $b + $units;
+    $b: $b + $units;
 
-  @return calc( #{$k} * 100vw + #{$b} );
+    @return calc(#{$k} * 100vw + #{$b});
 }
