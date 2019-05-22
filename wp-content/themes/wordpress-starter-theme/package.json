@@ -9,11 +9,12 @@
     "dev": "npm run clear && webpack --mode=development",
     "serve": "npm run clear && webpack-dev-server --mode=development",
     "clear": "del-cli dist",
-    "fix": "npm run js-fix",
-    "scss-fix": "stylelint 'src/**/*.s?(c|a)ss' --fix"
-    "js-fix": "./node_modules/.bin/eslint --fix src/**",
-    "lint": "npm run lint-js",
-    "lint-js": "./node_modules/.bin/eslint src/**"
+    "fix": "npm run js-fix && npm run scss-fix",
+    "scss-fix": "./node_modules/.bin/stylelint 'src/**/*.{vue,css,scss,sass}' --fix",
+    "js-fix": "./node_modules/.bin/eslint --fix 'src/**/*.{js,vue}'",
+    "lint": "npm run lint-js && npm run lint-scss",
+    "lint-js": "./node_modules/.bin/eslint 'src/**/*.{js,vue}'",
+    "lint-scss": "./node_modules/.bin/stylelint 'src/**/*.{vue,css,scss,sass}'"
   },
   "repository": {
     "type": "git",
@@ -33,12 +34,12 @@
     "babel-loader": "^8.0.5",
     "browser-sync": "^2.26.5",
     "browser-sync-webpack-plugin": "^2.2.2",
-    "bs-fullscreen-message": "^1.1.0",
     "copy-webpack-plugin": "^5.0.3",
     "css-loader": "^2.1.1",
     "del-cli": "^1.1.0",
     "eslint": "^5.16.0",
     "eslint-loader": "^2.1.2",
+    "eslint-plugin-vue": "^5.2.2",
     "img-loader": "^3.0.1",
     "mini-css-extract-plugin": "^0.6.0",
     "node-sass": "^4.12.0",

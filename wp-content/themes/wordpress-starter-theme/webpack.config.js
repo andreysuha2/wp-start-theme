@@ -1,3 +1,4 @@
+/* eslint-disable */
 const config = require("./config");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
@@ -53,6 +54,12 @@ module.exports = (env, options) => {
         module: {
             rules: [
                 {
+                    enforce: "pre",
+                    test: /\.(js|vue)$/,
+                    exclude: /node_modules/,
+                    loader: "eslint-loader"
+                },
+                {
                     test: /\.vue$/,
                     loader: "vue-loader",
                     options: {
@@ -60,12 +67,6 @@ module.exports = (env, options) => {
                             scss: "vue-style-loader!css-loader!sass-loader"
                         }
                     }
-                },
-                {
-                    enforce: "pre",
-                    test: /\.js$/,
-                    exclude: /node_modules/,
-                    loader: "eslint-loader"
                 },
                 {
                     test: /\.js$/,
@@ -159,9 +160,8 @@ module.exports = (env, options) => {
             }),
             new CopyWebpackPlugin(config.copy),
             new StyleLintPlugin({
-                files: 'src/**/*.s?(c|a)ss',
-                syntax: 'scss'
-            })
+                files: ["src/**/*.{vue,css,scss,sass}"]
+            }),
             new VueLoaderPlugin()
         ]
     }

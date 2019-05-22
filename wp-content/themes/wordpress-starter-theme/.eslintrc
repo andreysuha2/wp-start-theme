@@ -2,8 +2,9 @@
   * Описание павил можно посмотреть здесь: https://eslint.org/docs/rules/
   */
 {
-    "parser": "babel-eslint",
+    "extends": ["plugin:vue/base"],
     "parserOptions": {
+        "parser": "babel-eslint",
         "sourceType": "module",
         "ecmaVersion": 9
     },
