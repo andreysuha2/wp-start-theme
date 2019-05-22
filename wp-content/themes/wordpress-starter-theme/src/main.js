@@ -10,4 +10,7 @@ window.dl = dl;
 window.http = http;
 window.dom = new DomManipulate();
 // require main js file
+require("./framework/app");
 require('@js/index');
+
+dl.log('test');
