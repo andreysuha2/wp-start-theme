@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <h1>Прирвет! я пример Vue компонента))</h1>
+    <div class="example">
+        <h1 class="example--header">Прирвет! я пример Vue компонента))</h1>
         <p>Если ты хочешь использовать Vue в этом проекте, то ознакомся с <a target="_blank" href="https://ru.vuejs.org/index.html">документацией</a>. </p>
         <p>Ты можешь создавать компоненты внутри <b>"<code>src/framework/components</code>"</b>.</p>
         <p>Затем тебе нужно зарегистрировать компонент в <b>"<code>src/framework/register.js</code>"</b>.</p>
@@ -50,3 +50,14 @@
         }
     }
 </script>
+
+<style lang="scss">
+    .example {
+        border: 1px solid #000;
+        padding: 10px;
+
+        &--header {
+            color: $text-color;
+        }
+    }
+</style>

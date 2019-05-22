@@ -90,7 +90,12 @@ module.exports = (env, options) => {
                         {
                             loader: "sass-loader",
                             options: {
-                                sourceMap: true
+                                sourceMap: true,
+                                data: `
+                                    @import "@scss/_variables.scss";
+                                    @import "@scss/_functions.scss";
+                                    @import "@scss/_mixins.scss";
+                                `
                             }
                         },
 
