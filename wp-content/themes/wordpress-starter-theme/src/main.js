@@ -13,3 +13,4 @@ window.dom = new DomManipulate();
 require("./framework/app");
 require('@js/index');
 
+dl.log('test');
