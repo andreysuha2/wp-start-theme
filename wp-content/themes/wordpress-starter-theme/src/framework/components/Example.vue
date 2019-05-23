@@ -34,8 +34,8 @@ export default {
         start() {
             let { hours, min, sec } = this;
             hours = hours < 10 ? 0 + hours : hours;
-            min = min < 10 ? 0 + min : min;
-            sec = sec < 10 ? 0 + sec : sec;
+            min = min < 10 ? `0${min}` : min;
+            sec = sec < 10 ? `0${sec}` : sec;
             return `${hours}:${min}:${sec}`;
         },
         interval() {
