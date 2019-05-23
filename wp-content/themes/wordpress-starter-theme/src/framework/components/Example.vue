@@ -9,7 +9,7 @@
             в <b>"<code>src/main.js</code>"</b>
         </p>
         <p>
-            и строку: <br/><br/> <b>"<code><example-vue-component v-pre></example-vue-component></code>"</b>
+            и строку: <br/><br/> <b>"<code>{{"<\example-vue-component><\/example-vue-component>"}}</code>"</b>
             в <b>"<code>/index.php</code>".</b>
             <br/><br/>
             Таким образом я не попаду в итоговую сборку((
@@ -42,7 +42,12 @@ export default {
             let sec = Math.floor((this.now - date) / 1000),
                 min = Math.floor(sec / 60),
                 hour = Math.floor(min / 60);
-            return `${hour} h ${min} m ${sec} c`;
+            return `${hour} h ${this.getLast(min)} m ${this.getLast(sec)} c`;
+        }
+    },
+    methods: {
+        getLast(total) {
+            return total - Math.floor(total / 60) * 60;
         }
     },
     mounted() {
