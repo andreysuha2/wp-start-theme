@@ -1,26 +1,26 @@
 //  Цвет
 
-$body-bg: #fff;
-$text-color: #333;
+$bodyBg: #fff;
+$textColor: #333;
 
 // Цвет ссылки
 
-$link-color: #55b3f3;
-$link-color--hover: darken($link-color, 20%);
+$linkColor: #55b3f3;
+$linkColorHover: darken($linkColor, 20%);
 
 //  Типографика
 
-$font-family: 'Roboto', Helvetica, Arial, sans-serif;
+$fontFamily: 'Roboto', Helvetica, Arial, sans-serif;
 // $font-family--helvetica: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-$font-size: 14px;
-$font-weight: 400; // Regular
-$line-height: 1.2;
+$fontSize: 14px;
+$fontWeight: 400; // Regular
+$lineHeight: 1.2;
 
 // Ширина контейнера
 
-$container-padding: 15px;
-$container-width: 1170px + $container-padding * 2;
+$containerPadding: 15px;
+$containerWidth: 1170px + $containerPadding * 2;
 
 //  Адаптивность и соответствующие ширины контейнера
 

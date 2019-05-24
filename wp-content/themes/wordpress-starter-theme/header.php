@@ -5,7 +5,7 @@
 </head>
 
 <body <?php body_class("page-body"); ?>>
-    <div class="wrapper">
+    <div class="wrapper" id="app">
         <div class="content">
             <header class="page-header">
                 <div class="page-container">

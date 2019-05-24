@@ -3,7 +3,6 @@
 // param proxy for BrowserSync your can set in config/index.js
 
 module.exports = {
-    host: 'http:localhost',
-    port: '8080',
-    files: ['{include,template-parts,woocommerce}/**/*.php', '*.php']
+    host: 'localhost',
+    port: '8080'
 };
