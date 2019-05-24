@@ -16,7 +16,7 @@
     "globals": {
         "dl": "readonly",
         "http": "readonly",
-        "dom": "readonly",
+        "dml": "readonly",
         "wp": "readonly",
         "jQuery": "readonly"
     },
