@@ -25,7 +25,7 @@ class DomManipulateCore {
         return this;
     }
 
-    callCheckHandler(behavior, handler) {
+    callCheckHandler(behavior = "some", handler) {
         return Helpers.handleCheckMethod(this.node, this._paramType_, behavior, handler);
     }
 }
