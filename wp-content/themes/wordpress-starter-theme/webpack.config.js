@@ -104,7 +104,7 @@ module.exports = (env, options) => {
                     ]
                 },
                 {
-                    test: /\.(png|jpe?g|svg)/i,
+                    test: /\.(png|jpe?g|svg|gif)/i,
                     exclude: [/fonts/],
                     use: [
                         {
