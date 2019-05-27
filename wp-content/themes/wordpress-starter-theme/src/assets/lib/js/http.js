@@ -22,9 +22,13 @@ class Http {
     }
 
     post(action, data = {}, options = {}) {
-        data.action = action;
+        let formData = new FormData();
+        formData.append("action", action);
+        Object.keys(data).forEach((key) => {
+            formData.append(key, data[key]);
+        });
         return new Promise((resolve, reject) => {
-            this.http.post('', data, options)
+            this.http.post('', formData, options)
                 .then((response) => resolve(response))
                 .catch((err) => reject(err.response));
         });
