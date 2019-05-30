@@ -19,7 +19,9 @@
             <?php endif; ?>
 
             <example-vue-component></example-vue-component>
-
+            <div id="test-modal">
+                <span>test</span>
+            </div>
         </div>
 	</main>
 
