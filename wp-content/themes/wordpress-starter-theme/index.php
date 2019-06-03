@@ -17,11 +17,10 @@
                 <?php get_template_part( 'template-parts/content', 'none' ); ?>
 
             <?php endif; ?>
-
+            <?php echo VarToJS([
+                "test" => "test"
+            ])?>
             <example-vue-component></example-vue-component>
-            <div id="test-modal">
-                <span>test</span>
-            </div>
         </div>
 	</main>
 

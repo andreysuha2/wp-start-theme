@@ -12,3 +12,6 @@ window.dom = new DomManipulate();
 // require main js file
 require("./framework/app");
 require('@js/index');
+
+// eslint-disable-next-line no-undef
+dl.log(test);
