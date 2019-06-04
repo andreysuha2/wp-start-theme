@@ -29,4 +29,4 @@ class DomManipulateLibrary {
     $(param) { return new DomObject(param); }
 }
 
-export default DomManipulateLibrary;
+export default new DomManipulateLibrary();
