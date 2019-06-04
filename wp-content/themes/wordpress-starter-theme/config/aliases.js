@@ -10,5 +10,6 @@ module.exports = {
     "@lib/js": path.resolve(__dirname, '../src/assets/lib/js'),
     "@lib/scss": path.resolve(__dirname, '../src/assets/lib/scss'),
     "@frame": path.resolve(__dirname, '../src/framework'),
-    "@components": path.resolve(__dirname, '../src/framework/components')
+    "@components": path.resolve(__dirname, '../src/framework/components'),
+    "@helpers": path.resolve(__dirname, "../src/assets/helpers")
 };
