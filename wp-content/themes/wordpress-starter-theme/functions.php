@@ -98,3 +98,7 @@ require get_template_directory() . '/include/customizer.php';
  * Create custom post types and taxonomy.
  */
 require get_template_directory() . '/include/setup.php';
+/**
+ * Php helpers
+ */
+require get_template_directory() . "/helpers/index.php";
