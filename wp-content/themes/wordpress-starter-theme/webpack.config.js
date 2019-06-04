@@ -146,7 +146,7 @@ module.exports = (env, options) => {
                 port: config.devServer.port,
                 files: [
                     {
-                        match: ['{include,template-parts,woocommerce}/**/*.php', '*.php'],
+                        match: ['{helpers,include,template-parts,woocommerce}/**/*.php', '*.php'],
                         fn: function (event) {
                             if (event === "change") {
                                 const bs = require("browser-sync").get("bs-webpack-plugin");

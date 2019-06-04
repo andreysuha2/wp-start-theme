@@ -18,7 +18,15 @@
 
             <?php endif; ?>
             <?php echo VarToJS([
-                "test" => "test"
+                "test" => "test",
+                "test1" => 1.2,
+                "test2" => 1,
+                "test3" => [1, 2, 4, 'fsadf'],
+                "test4" => [
+                    "test" => [1, 2, 3, 4],
+                    "test1" => ["test1", "test2"]
+                ],
+                "test5" => get_post(1)
             ])?>
             <example-vue-component></example-vue-component>
         </div>

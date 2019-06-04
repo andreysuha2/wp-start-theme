@@ -14,4 +14,4 @@ require("./framework/app");
 require('@js/index');
 
 // eslint-disable-next-line no-undef
-dl.log(test);
+dl.log(test5);
