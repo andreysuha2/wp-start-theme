@@ -8,7 +8,7 @@
                 elseif (gettype($value) === "array" || gettype($value) === "object") {
                 $str = json_encode($value);
             ?>
-                var <?php echo $key?> = JSON.parse('<?php echo $str;?>'.replace(/\r?\n/g, ""));
+                var <?php echo $key?> = <?php echo $str;?>;
             <?php } elseif(gettype($value) === "boolean" ||
                            gettype($value) === "integer" ||
                            gettype($value) === "double" ||

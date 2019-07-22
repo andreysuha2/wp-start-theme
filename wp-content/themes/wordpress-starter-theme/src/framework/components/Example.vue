@@ -56,7 +56,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
     .example {
         border: 1px solid #000;
         padding: 10px;
