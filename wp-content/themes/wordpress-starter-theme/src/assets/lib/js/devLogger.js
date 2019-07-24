@@ -1,6 +1,4 @@
 /* eslint-disable no-console */
-export const isDev = process.env.NODE_ENV !== "production";
-
 class DevLogger {
     constructor() {
         this.colors = { notify: '#006400', warning: '#808000', error: 'red' };
@@ -37,4 +35,4 @@ class DevLogger {
         if(isDev) console.log(...arguments);
     }
 }
-export default new DevLogger();
+module.exports = new DevLogger();

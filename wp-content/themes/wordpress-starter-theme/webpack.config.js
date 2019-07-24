@@ -7,6 +7,8 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const webpack = require("webpack");
+const path = require("path");
 
 module.exports = (env, options) => {
     return {
@@ -29,6 +31,9 @@ module.exports = (env, options) => {
                     },
                 })
             ]
+        },
+        externals: {
+            "jquery": 'jQuery'
         },
         devtool: "source-map",
         resolve: {
@@ -162,7 +167,15 @@ module.exports = (env, options) => {
             new StyleLintPlugin({
                 files: ["src/**/*.{vue,css,scss,sass}"]
             }),
-            new VueLoaderPlugin()
+            new VueLoaderPlugin(),
+            new webpack.DefinePlugin({
+                isDev: options.mode !== "production"
+            }),
+            new webpack.ProvidePlugin({
+                dl: path.resolve(__dirname, "./src/assets/lib/js/devLogger"),
+                "$": "jquery",
+                "jQuery": "jquery"
+            })
         ]
     }
 };
