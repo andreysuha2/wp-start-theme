@@ -15,10 +15,10 @@
     },
     "globals": {
         "dl": "readonly",
-        "http": "readonly",
-        "dml": "readonly",
+        "isDev": "readonly",
         "wp": "readonly",
-        "jQuery": "readonly"
+        "jQuery": "readonly",
+        "$": "readonly"
     },
     "rules": {
         "for-direction": "error", // создан бесконечный цикл for
