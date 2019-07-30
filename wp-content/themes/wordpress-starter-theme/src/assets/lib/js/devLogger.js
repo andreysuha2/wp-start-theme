@@ -10,7 +10,7 @@ class DevLogger {
     }
 
     get error() {
-        let args = isDev ? [ console.error(), console, ...arguments ] : [ () => {} ];
+        let args = isDev ? [ console.error, console, ...arguments ] : [ () => {} ];
         return log(args);
     }
 
