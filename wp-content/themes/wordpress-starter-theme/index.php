@@ -18,6 +18,7 @@
 
             <?php endif; ?>
             <example-vue-component></example-vue-component>
+            <i class="icon icon-menu"></i>
         </div>
 	</main>
 

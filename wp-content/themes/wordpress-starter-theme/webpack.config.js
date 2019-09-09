@@ -127,6 +127,19 @@ module.exports = (env, options) => {
                     ]
                 },
                 {
+                    test: /\.font\.js/,
+                    use: [
+                        MiniCssExtractPlugin.loader,
+                        'css-loader',
+                        {
+                            loader: 'webfonts-loader',
+                            options: {
+                                publicPath: "/dist/"
+                            }
+                        }
+                    ]
+                },
+                {
                     test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
                     include: [/fonts/],
                     use: [{
