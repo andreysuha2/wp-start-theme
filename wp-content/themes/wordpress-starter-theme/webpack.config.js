@@ -180,7 +180,8 @@ module.exports = (env, options) => {
             new BundleAnalyzerPlugin({
                 analyzerMode: options.mode !== "production" ? 'server' : 'static',
                 openAnalyzer: false,
-                analyzerPort: 9000
+                analyzerPort: 9000,
+                excludeAssets: 'customizer.js'
             }),
             new CompressionPlugin({
                 filename: '[path].gz[query]',
