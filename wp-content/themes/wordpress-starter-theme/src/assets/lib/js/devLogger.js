@@ -9,6 +9,11 @@ class DevLogger {
         return log(args);
     }
 
+    get table() {
+        let args = isDev ? [ console.table, console, ...arguments ] : [ () => {} ];
+        return log(args);
+    }
+
     get error() {
         let args = isDev ? [ console.error, console, ...arguments ] : [ () => {} ];
         return log(args);
