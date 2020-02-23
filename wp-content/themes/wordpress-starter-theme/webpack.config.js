@@ -7,6 +7,8 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const webpack = require("webpack");
 const path = require("path");
 
@@ -16,6 +18,10 @@ module.exports = (env, options) => {
         output: {
             filename: './js/[name].js',
             path: __dirname + '/dist'
+        },
+        performance: {
+            maxEntrypointSize: 5120000,
+            maxAssetSize: 5120000
         },
         optimization: {
             minimizer: [
@@ -170,6 +176,19 @@ module.exports = (env, options) => {
             new VueLoaderPlugin(),
             new webpack.DefinePlugin({
                 isDev: options.mode !== "production"
+            }),
+            new BundleAnalyzerPlugin({
+                analyzerMode: options.mode !== "production" ? 'server' : 'static',
+                openAnalyzer: false,
+                analyzerPort: 9000
+            }),
+            new CompressionPlugin({
+                filename: '[path].gz[query]',
+                algorithm: 'gzip',
+                threshold: 800,
+                minRatio: 0.8,
+                exclude: /node_modules/,
+                test: /\.js$|\.css$/,
             }),
             new webpack.ProvidePlugin({
                 dl: path.resolve(__dirname, "./src/assets/lib/js/devLogger"),
