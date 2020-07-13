@@ -3,6 +3,7 @@
 html {
     box-sizing: border-box;
     height: 100%;
+    min-height: 100%;
 }
 
 *,
@@ -19,6 +20,7 @@ body {
     font-size: $fontSize;
     line-height: $lineHeight;
     height: 100%;
+    min-height: 100%;
 }
 
 a {
@@ -44,7 +46,7 @@ section {
 .wrapper {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    min-height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-image: url('~@img/webpack.png');
