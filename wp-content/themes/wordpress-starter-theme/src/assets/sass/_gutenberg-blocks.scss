@@ -1,0 +1,37 @@
+.blocks {
+
+    &-gallery-grid {
+        width: 100%;
+    }
+}
+
+.wp-block {
+    text-align: inherit;
+
+    &-embed {
+        text-align: inherit;
+
+        &.alignleft,
+        &.alignright {
+            max-width: 100%;
+        }
+    }
+}
+
+.aligncenter {
+    * {
+        text-align: center;
+    }
+}
+
+.alignleft {
+    * {
+        text-align: left;
+    }
+}
+
+.alignright {
+    * {
+        text-align: right;
+    }
+}

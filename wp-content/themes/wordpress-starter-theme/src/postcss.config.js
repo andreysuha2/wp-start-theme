@@ -8,9 +8,7 @@ https://css-tricks.com/css-grid-in-ie-css-grid-and-the-new-autoprefixer/
 module.exports = {
     plugins: [
         autoprefixer(
-            {
-                grid: true
-            }
+            { grid: true }
         )
     ]
 };

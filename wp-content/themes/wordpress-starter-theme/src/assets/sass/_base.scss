@@ -2,7 +2,6 @@
 
 html {
     box-sizing: border-box;
-    height: 100%;
 }
 
 *,
@@ -18,7 +17,6 @@ body {
     font-weight: $fontWeight;
     font-size: $fontSize;
     line-height: $lineHeight;
-    height: 100%;
 }
 
 a {
@@ -45,9 +43,6 @@ section {
     display: flex;
     flex-direction: column;
     min-height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url('~@img/webpack.png');
 }
 
 .content {
@@ -61,6 +56,36 @@ section {
     margin-right: auto;
     padding-left: $containerPadding;
     padding-right: $containerPadding;
+
+    &--no-gutter {
+        padding-right: 0;
+        padding-left: 0;
+        max-width: 100vw;
+    }
+
+    &--content {
+        max-width: $contentContainerWidth;
+    }
+
+    &--outer {
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 100%;
+    }
+}
+
+.full-width {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+
+    > * {
+        width: 100%;
+        height: auto;
+    }
 }
 
 .icon {

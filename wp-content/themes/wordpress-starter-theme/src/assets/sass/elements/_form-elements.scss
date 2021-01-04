@@ -1,4 +1,11 @@
-// Все элементы формы
+//Reset IOS buttons style
+input[type='submit'] {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+}
+
+//Form elements
 
 input[type='text'],
 input[type='email'],

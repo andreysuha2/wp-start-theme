@@ -4,3 +4,4 @@ import '@lib/scss/base.lib.scss';
 // require main js file
 require("./framework/app");
 require('@js/index');
+require('@js/index');
