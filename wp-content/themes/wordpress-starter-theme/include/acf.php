@@ -1,14 +1,6 @@
 <?php
 require_once 'classes/F5_ACF_TO_JSON.php';
 
-function pands_admin_colors() {
-    echo '<style type="text/css">
-            [id^=acf-group] > div.postbox-header > div > a { display: none; visibility: hidden }
-            [id^=acf-group] > div.postbox-header > div > a ~ .handle-order-lower { display: none; visibility: hidden }
-            [id^=acf-group] > div.postbox-header > div > a ~ .handle-order-higher { display: none; visibility: hidden }
-         </style>';
-}
-
 if ( function_exists( 'acf_add_options_page' ) ) {
     acf_add_options_page( array(
         'page_title' => 'Theme options',

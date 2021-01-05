@@ -10,8 +10,7 @@ function theme_setup() {
 
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus( [
-        'menu-1' => esc_html__( 'Main menu', 'theme' ),
-        'menu-2' => esc_html__( 'Footer menu', 'theme' ),
+        'menu-1' => esc_html__( 'Main menu', 'theme' )
     ] );
 
     /*
@@ -27,16 +26,6 @@ function theme_setup() {
         'style',
         'script'
     ) );
-
-    $defaults = array(
-        'post'       => '500',
-        'page'       => '500',
-        'attachment' => '650',
-        'artist'     => '300',
-        'movie'      => '400'
-    );
-
-    add_theme_support( 'content-width', $defaults );
 
     add_theme_support( 'editor-color-palette', [
         array(
@@ -83,5 +72,4 @@ function theme_setup() {
     add_theme_support( 'align-wide' );
     add_theme_support( 'disable-custom-font-sizes' );
     add_theme_support( 'editor-styles' );
-
 }
